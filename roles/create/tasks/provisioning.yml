@@ -1,0 +1,25 @@
+- name: Novo grupo de segurança
+  local_action:
+    module: ec2_group
+    name: "{{ security_group }}"
+    description: guga_sg
+    region: "{{ region }}"
+    rules:
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        cidr_ip: 0.0.0.0/0
+    rules_egress:
+      - proto: all
+        cidr_ip: 0.0.0.0/0
+  register: basic_firewall
+
+- name: Nova Maquina virtual
+  local_action: ec2
+    group={{ security_group }}
+    instance_type={{ instance_type }}
+    image={{ image }}
+    wait=true
+    region={{ region }}
+    count={{ count }}
+  register: ec2

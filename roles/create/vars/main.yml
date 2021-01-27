@@ -1,0 +1,7 @@
+---
+# vars file for create
+instance_type: t2.small
+security_group: sgWorkflow
+image: ami-0ff8a91507f77f867
+region: us-east-1
+count: 1
