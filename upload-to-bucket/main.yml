@@ -1,4 +1,7 @@
 ---
 - hosts: local
+  vars:
+    directories_to_compact:
+      - /usr/local/ucloud 
   roles:
   - upload-to-bucket
