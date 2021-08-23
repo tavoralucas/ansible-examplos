@@ -2,7 +2,6 @@
 
 ## Upload mode related vars
 directories_to_compact:
-  - /tmp/test-upload
 destination_dir: /tmp
 upload_mode: true
 
