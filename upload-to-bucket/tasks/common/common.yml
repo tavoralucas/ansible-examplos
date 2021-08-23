@@ -1,0 +1,20 @@
+---
+# - name: Install dependencies
+#   ansible.builtin.yum:
+#     name: "{{ item }}"
+#     state: present
+#     update_cache: true
+#   loop:
+#     - python3-pip
+
+- name: Check if directories to compact exists
+  ansible.builtin.stat:
+    path: "{{ item }}"
+  loop: "{{ directories_to_compact }}"
+  register: directories_stat
+
+- name: Compact directories to transfer to Bucket
+  community.general.archive: 
+    path: "{{ item }}"
+    dest: "{{ destination_dir }}/{{ item | replace('/', '') }}.tar.gz"
+  loop: "{{ directories_stat.results | selectattr('stat.exists') | map(attribute='item') | list }}"

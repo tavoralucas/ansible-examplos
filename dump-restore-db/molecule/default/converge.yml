@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include dump-restore-db"
+      include_role:
+        name: "dump-restore-db"

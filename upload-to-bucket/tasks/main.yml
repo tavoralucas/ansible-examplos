@@ -1,0 +1,12 @@
+---
+- name: Execute validation tasks
+  include_tasks:
+    file: "validations/validations.yml"
+
+- name: Execute common tasks
+  include_tasks:
+    file: "common/common.yml"
+
+- name: Execute specific provider tasks
+  include_tasks:
+    file: "core/main.yml"

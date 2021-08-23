@@ -1,0 +1,28 @@
+---
+
+## Upload mode related vars
+directories_to_compact:
+  - /tmp/test-upload
+destination_dir: /tmp
+upload_mode: true
+
+## Download mode related vars
+files_to_download:
+ - 
+download_mode: false
+
+## S3 related vars
+s3_url: "https://demobbs3.operacaomulticloud.com/"
+destination_bucket_type: s3
+destination_bucket_name: syncdatabb
+context: bb
+create_bucket: false
+
+## AWS credentials section
+aws_access_key: "AKIAIOSFODNN7EXAMPLE"
+aws_secret_access_key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+## GCP credentials section
+gcp_project:
+gcp_auth_kind: "serviceaccount"
+gcp_service_account_file:

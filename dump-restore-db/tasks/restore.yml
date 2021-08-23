@@ -1,0 +1,27 @@
+---
+- name: Download dump from MinIO
+  aws_s3:
+    s3_url: "{{ s3_url }}"
+    bucket: "{{ destination_bucket_name }}"
+    object: "{{ backup_name_in_s3 }}"
+    dest: "{{ destination_database_backup_directory }}/{{ backup_name_in_s3 }}"
+    mode: get
+    validate_certs: true
+    rgw: true
+    encrypt: false
+    permission: []
+  environment:
+    AWS_ACCESS_KEY: "{{ aws_access_key }}"
+    AWS_SECRET_KEY: "{{ aws_secret_access_key }}"
+  when: destination_bucket_type == "s3"
+
+- name: Check if MariaDB is running
+  wait_for:
+    port: "{{ destination_database_port }}"
+    host: 0.0.0.0
+
+- name: Restore selected database
+  community.mysql.mysql_db:
+    name: "{{ destination_database_name }}"
+    state: import
+    target: "{{ destination_database_backup_directory }}/{{ backup_name_in_s3 }}"

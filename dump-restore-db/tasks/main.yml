@@ -1,0 +1,10 @@
+---
+- name: Run tasks for dump mode
+  include_task:
+    file: "dump.yml"
+  when: dump_mode|bool == true
+
+- name: Run tasks for restore mode
+  include_task:
+    file: "restore.yml"
+  when: restore_mode|bool == true

@@ -1,0 +1,6 @@
+---
+- name: Dump selected database
+  community.mysql.mysql_db:
+    state: dump
+    name: "{{ source_database_name }}"
+    target: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}"

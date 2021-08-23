@@ -1,0 +1,27 @@
+---
+- name: Install GCS pip dependencies
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  loop:
+    - requests
+    - google-auth
+    - google-cloud-storage
+
+- name: Generate random string for bucket suffix
+  ansible.builtin.debug:
+    var: lookup('community.general.random_string', length=6)
+  register: bucket_suffix
+
+- name: Send compressed directories to Google GCS
+  google.cloud.gcp_storage_object:
+    action: upload
+    bucket: "{{ bucket_suffix }}-{{ destination_bucket_name }}"
+    src: "{{ destination_dir }}/{{ item }}.tar.gz"
+    dest: "{{ context }}/{{ item }}.tar.gz"
+    project: "{{ gcp_project }}"
+    auth_kind: "{{ gcp_auth_kind }}"
+    service_account_file: "{{ gcp_service_account_file }}"
+    state: present
+  loop: "{{ directories_stat.results | selectattr('stat.exists') | map(attribute='item') | list }}"
+  when: destination_bucket_type == "gcs"

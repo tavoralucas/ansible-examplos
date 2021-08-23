@@ -1,0 +1,9 @@
+- name: Run Google Workflow
+  include_tasks:
+    file: "../provider/gcp.yml"
+  when: destination_bucket_type == "gcs"
+
+- name: Run AWS Workflow
+  include_tasks: 
+    file: "../provider/aws.yml" 
+  when: destination_bucket_type == "s3"

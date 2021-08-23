@@ -1,0 +1,26 @@
+---
+- name: Install AWS S3 pip dependencies
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  loop:
+    - botocore
+    - boto3
+    - boto
+
+- name: Send compressed directories to MinIO S3 Bucket
+  aws_s3:
+    s3_url: "{{ s3_url }}"
+    bucket: "{{ destination_bucket_name }}"
+    object: "{{ context }}/{{ item | replace('/', '') }}.tar.gzkkkk"
+    src: "{{ destination_dir }}/{{ item | replace('/', '') }}.tar.gz"
+    mode: put
+    validate_certs: true
+    rgw: true
+    encrypt: false
+    permission: []
+  environment:
+    AWS_ACCESS_KEY: "{{ aws_access_key }}"
+    AWS_SECRET_KEY: "{{ aws_secret_access_key }}"
+  loop: "{{ directories_stat.results | selectattr('stat.exists') | map(attribute='item') | list }}"
+  when: destination_bucket_type == "s3"

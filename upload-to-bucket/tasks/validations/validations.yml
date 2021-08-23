@@ -1,0 +1,14 @@
+---
+- name: Checking if AWS credentials are empty
+  fail:
+    msg: "You need to set the values of the variables aws_access_key and aws_secret_access_key when using S3"
+  when:
+    - destination_bucket_type == "s3"
+    - (not aws_access_key) or (not aws_secret_access_key)
+
+- name: Checking if GCP credentials are empty
+  fail:
+    msg: "You need to set the values of the variables gcp_project and gcp_service_account_file when using GCS"
+  when:
+    - destination_bucket_type == "gcs"
+    - (not gcp_project) or (not gcp_service_account_file)  
