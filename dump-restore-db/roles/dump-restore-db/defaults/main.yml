@@ -5,7 +5,7 @@ dump_mode: true
 restore_mode: false
 
 ## Source DB related variables
-source_database_name: ucloud
+source_database_name: billing
 source_database_connection_url: pmc-rds01.cbnfsxrayvur.sa-east-1.rds.amazonaws.com
 source_database_user: admin
 source_database_password: S9DRfuYsAE

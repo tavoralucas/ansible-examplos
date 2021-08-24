@@ -3,5 +3,6 @@
   vars:
     directories_to_compact:
       - /usr/local/ucloud 
+      - /etc/ucloud
   roles:
   - upload-to-bucket

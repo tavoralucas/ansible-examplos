@@ -3,4 +3,8 @@
   community.mysql.mysql_db:
     state: dump
     name: "{{ source_database_name }}"
-    target: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}"
+    target: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}{{ ansible_date_time.iso8601_basic_short }}.sql"
+    login_host: "{{ source_database_connection_url }}"
+    login_user: "{{ source_database_user }}"
+    login_password: "{{ source_database_password }}"
+    ignore_tables: false
