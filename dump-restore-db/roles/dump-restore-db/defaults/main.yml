@@ -29,7 +29,7 @@ backup_name_in_s3:
 s3_url: "https://demobbs3.operacaomulticloud.com/"
 destination_bucket_type: s3
 destination_bucket_name: syncdatabb
-context: bb
+context: dump
 create_bucket: false
 
 ## S3 Credentials
