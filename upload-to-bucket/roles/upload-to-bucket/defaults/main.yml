@@ -14,7 +14,7 @@ download_mode: false
 s3_url: "https://demobbs3.operacaomulticloud.com/"
 destination_bucket_type: s3
 destination_bucket_name: syncdatabb
-context: bb
+context: demobbnovoteste
 create_bucket: false
 
 ## AWS credentials section
