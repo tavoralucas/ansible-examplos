@@ -35,7 +35,7 @@ variable "allowed_ports" {
 
 variable "instance_name" {
   type = string
-  default = "terraform-created"
+  default = "terraform-created-vm"
 }
 
 variable "instance_ami" {
