@@ -1,0 +1,7 @@
+---
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: demobb-cf-bucket-usto
