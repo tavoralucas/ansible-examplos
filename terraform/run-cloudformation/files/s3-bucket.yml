@@ -4,4 +4,4 @@ Resources:
     Type: 'AWS::S3::Bucket'
     DeletionPolicy: Delete
     Properties:
-      BucketName: demobb-cf-bucket-usto
+      BucketName: demobb-cf-bucket-ustore
