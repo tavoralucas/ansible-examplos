@@ -3,28 +3,4 @@
   community.mysql.mysql_db:
     state: dump
     name: "{{ source_database_name }}"
-    target: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}.sql"
-    login_host: "{{ source_database_connection_url }}"
-    login_user: "{{ source_database_user }}"
-    login_password: "{{ source_database_password }}"
-    dump_extra_args: "--max_allowed_packet=800M"
-
-- name: Compact dump file to transfer to Bucket
-  community.general.archive:
-    path: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}.sql"
-    dest: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}.tar.gz"
-
-- name: Send compressed dump database to Bucket S3
-  aws_s3:
-    s3_url: "{{ s3_url }}"
-    bucket: "{{ destination_bucket_name }}"
-    object: "{{ context }}/{{ source_database_backup_name }}{{ ansible_date_time.iso8601_basic_short }}.tar.gz"
-    src: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}.tar.gz"
-    mode: put
-    validate_certs: true
-    rgw: true
-    encrypt: false
-    permission: []
-  environment:
-    AWS_ACCESS_KEY: "{{ aws_access_key }}"
-    AWS_SECRET_KEY: "{{ aws_secret_access_key }}"
+    target: "{{ source_database_backup_directory }}/{{ source_database_backup_name }}"

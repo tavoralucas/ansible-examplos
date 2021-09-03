@@ -1,28 +1,30 @@
 ---
 # defaults file for dump-restore-db
 
-dump_mode: true
-restore_mode: false
+dump_mode: false
+restore_mode: true
+install_mariadb: true
 
 ## Source DB related variables
-source_database_name: billing
-source_database_connection_url: pmc-rds01.cbnfsxrayvur.sa-east-1.rds.amazonaws.com
-source_database_user: admin
-source_database_password: S9DRfuYsAE
-source_database_port: 3306
-source_database_backup_name: dump_ucloud_bb
-source_database_backup_directory: /tmp
+source_database_name:
+source_database_connection_url:
+source_database_user:
+source_database_password:
+source_database_port:
+source_database_backup_name:
+source_database_backup_directory:
 
 
 ## Destination DB related variables
-destination_database_name:
-destination_database_connection_url:
-destination_database_user:
-destination_database_password:
+destination_database_name: ucloud
+destination_database_connection_url: localhost
+destination_database_user: root
+destination_database_root_password: ""
+destination_database_password: "supersecretpassword"
 destination_database_port:
 destination_database_backup_name:
-destination_database_backup_directory:
-backup_name_in_s3: 
+destination_database_backup_directory: "/tmp/"
+backup_name_in_s3: "dump_ucloud_bb20210901T114653.tar.gz"
 
 
 ## MinIO related variables
@@ -32,6 +34,6 @@ destination_bucket_name: syncdatabb
 context: dump
 create_bucket: false
 
-## S3 Credentials
+## AWS Credentials
 aws_access_key: "AKIAIOSFODNN7EXAMPLE"
 aws_secret_access_key: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
