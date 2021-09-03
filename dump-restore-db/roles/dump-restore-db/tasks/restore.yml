@@ -20,6 +20,8 @@
     name: mariadb-server
     state: present
   when: install_mariadb|bool == true
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
 
 - name: Enable and start MariaDB service
   ansible.builtin.systemd:
