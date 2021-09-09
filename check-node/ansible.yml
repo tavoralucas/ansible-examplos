@@ -1,9 +1,7 @@
-#--- # Install rabbitMQ no centos7
 - name: Preparando ambiente...
   hosts: all
-  user: root
-  
-  
+  become: true
+
   tasks:
     - name: Atualizando dependencias.
       command: npm i xhr2
