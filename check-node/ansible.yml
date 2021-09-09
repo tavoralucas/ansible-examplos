@@ -1,0 +1,13 @@
+#--- # Install rabbitMQ no centos7
+- name: Preparando ambiente...
+  hosts: all
+  user: root
+  
+  
+  tasks:
+    - name: Atualizando dependencias.
+      command: npm i xhr2
+      
+    - name: Executando script-js
+      #      command: node script-umock.js
+      command: node /root/magico/script-umock.js
