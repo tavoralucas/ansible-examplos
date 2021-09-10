@@ -3,9 +3,29 @@
   become: true
 
   tasks:
-    - name: Atualizando dependencias.
-      command: npm i xhr2
+    - name: Install node
+      shell: |
+            curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+            sudo yum install nodejs -y
+      args:
+        creates: /usr/bin/npm
+
+    - name: Copy script to destination
+      ansible.builtin.copy:
+        src: "files/{{ item }}"
+        dest: "/tmp/{{ item }}"
+        mode: '0644'
+      loop:
+        - package.json
+        - package-lock.json
+        - script-umock.js
+
+    - name: Install package xhr2
+      npm:
+        name: xhr2
+        state: latest
+        global: yes
+        path: /tmp
       
     - name: Executando script-js
-      #      command: node script-umock.js
-      command: node /root/magico/script-umock.js
+      command: node /tmp/script-umock.js
