@@ -29,3 +29,8 @@
       
     - name: Executando script-js
       command: node /tmp/script-umock.js
+      register: output
+
+    - name: Print result
+      ansible.builtin.debug:
+        var: output.stdout_lines
