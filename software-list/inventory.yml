@@ -1,5 +1,5 @@
 - name: Listando software instalados
-  hosts: teste
+  hosts: all
   become: true
   tasks:
   - name: Gather the package facts
