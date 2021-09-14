@@ -6,6 +6,11 @@
     ansible.builtin.package_facts:
       manager: auto
 
+  - name: Get package facts
+    set_fact:
+      packages: "{{ ansible_facts.packages }}"
+
   - name: Print the package facts
     ansible.builtin.debug:
-      var: ansible_facts.packages
+      msg: "{{ packages.keys() }}"
+
