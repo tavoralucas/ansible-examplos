@@ -1,0 +1,21 @@
+{
+  "name": "newdisktobbvm",
+  "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
+  "virtualSize": 2,
+  "storage": {
+    "ucloudIdentifier": "d88c3022-8f02-419a-acf9-847878a11c29",
+    "hyperIdentifier": "datastore-39",
+    "name": "disconovoclone",
+    "displayName": "disconovoclone",
+    "uploadVms": false,
+    "container": {
+      "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+      "name": "BB-VMWARE",
+      "type": "vmware",
+      "toBilling": false
+    },
+    "shared": false
+  },
+  "encrypted": false,
+  "password": ""
+}

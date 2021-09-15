@@ -1,0 +1,61 @@
+---
+- name: Login to ucloud
+  uri:
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ api_login }}"
+    method: POST
+    body: '{ "login": "{{ ucloud_login }}", "password": "{{ ucloud_password }}" }'
+    status_code: 200
+    body_format: json
+    return_content: true
+  register: token
+
+- name: Create disk and attach to VM
+  uri:
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_ucloud_identifier }}/disk"
+    method: POST
+    body: "{{ lookup('template','new-disk-to-vm.json') }}"
+    status_code: 200
+    body_format: json
+    return_content: true
+    headers:
+      token: "{{ token.content }}"
+      accept: "application/json"
+      Content-Type: "application/json"
+  register: new_disk_to_vm
+
+- name: Set disk task identifier fact
+  set_fact:
+   new_disk_task_identifier: "{{ new_disk_to_vm.content | from_json | json_query(\"ucloudIdentifier\") }}"
+
+- name: Wait until new disk created and attached
+  uri:
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ task_status }}/{{ new_disk_task_identifier }}"
+    method: GET
+    status_code: 200
+    body_format: json
+    return_content: true
+    headers:
+      token: "{{ token.content }}"
+      accept: "application/json"
+  register: task_status
+  until: "{{ task_status.content | from_json | json_query(\"status\") }} == 200"
+  retries: 30
+  delay: 5
+
+- name: Install MariaDB
+  yum:
+    name: mariadb-server
+    state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
+
+- name: Enable and start MariaDB service
+  ansible.builtin.systemd:
+    name: mariadb
+    enabled: yes
+    state: started
+
+- name: Wait for MariaDB running port
+  wait_for:
+    port: 3306
+    host: 0.0.0.0
