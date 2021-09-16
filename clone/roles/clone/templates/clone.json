@@ -1,0 +1,12 @@
+{
+  "displayName": "vmware-demo1509",
+  "networkInterfaces": [
+    {
+      "ucloudIdentifier": "b629badd-59a7-4708-b5e7-09c0a18d63eb",
+      "hyperIdentifier": "ba948c477f9166a05ab0fca8e2b473e7:Network adapter 2",
+      "subnet": {
+        "ucloudIdentifier": "39bc2ef4-7036-472f-bba5-a594337fbbbd"
+      }
+    }
+  ]
+}

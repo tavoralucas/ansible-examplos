@@ -1,0 +1,33 @@
+---
+# defaults file for config-vm
+
+ucloud_login: "bb.vmware"
+ucloud_password: "B4nc0Br4s1l!"
+ucloud_uri: "https://demobbucloud.operacaomulticloud.com"
+api_basepath: "ucloud/rest"
+
+vm_ucloud_identifier: "f30162d6-33ab-44f9-a2b4-dd9a19341ed2"
+vm_to_clone_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
+vm_name: "testewmware"
+vm_disk_ucloud_identifier: "d88c3022-8f02-419a-acf9-847878a11c29"
+
+## API Paths
+api_login: "users/login"
+network_list: "network/light"
+stop_vm: "vm/stop"
+start_vm: "vm/start"
+disk_create: "disk"
+storage_path: "storage"
+attach_disk_to_vm: "vm/vmident/disk/diskident/attach"
+task_status: "task"
+
+# VM Lifecycle mode
+vm_lifecycle_mode_start: false
+vm_lifecycle_mode_stop: false
+
+hyper_identifier: "datastore-39"
+## Disk stuff
+storage_ucloud_identifier: "d88c3022-8f02-419a-acf9-847878a11c29"
+
+subnet_ucloud_identifier: "729855c3-9f4d-4473-8580-b61281fab9c3"
+network_ucloud_identifier: "42cc8e89-b5e7-4fbd-b905-246fe8428deb"

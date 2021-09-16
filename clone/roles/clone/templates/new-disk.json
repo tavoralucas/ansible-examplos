@@ -1,0 +1,54 @@
+{
+  "name": "newdisktoattach",
+  "virtualSize": 2,
+  "storage": {
+    "ucloudIdentifier": "d88c3022-8f02-419a-acf9-847878a11c29",
+    "hyperIdentifier": "{{ hyper_identifier }}",
+    "name": "datastore1 H31",
+    "displayName": "datastore1 H31",
+    "uploadVms": true,
+    "container": {
+      "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+      "name": "BB-VMWARE",
+      "type": "vmware",
+      "toBilling": false
+    },
+    "shared": true
+  },
+  "encrypted": false
+}
+
+{
+  "name": "newdiskagoravai",
+  "ucloudIdentifier": "string",
+  "virtualSize": 0,
+  "storage": {
+    "ucloudIdentifier": "string",
+    "hyperIdentifier": "string",
+    "name": "string",
+    "displayName": "string",
+    "uploadVms": true,
+    "location": "string",
+    "container": {
+      "ucloudIdentifier": "string",
+      "name": "string",
+      "type": "string",
+      "adminIpAddress": "string",
+      "toBilling": true
+    },
+    "region": {
+      "ucloudIdentifier": "string",
+      "name": "string",
+      "location": "string",
+      "zones": [
+        {
+          "name": "string",
+          "ucloudIdentifier": "string"
+        }
+      ]
+    },
+    "shared": true
+  },
+  "encrypted": true,
+  "password": "string"
+}

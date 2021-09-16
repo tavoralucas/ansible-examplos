@@ -1,0 +1,13 @@
+{
+  "vm": {
+    "ucloudIdentifier": "f30162d6-33ab-44f9-a2b4-dd9a19341ed2"
+  },
+  "subnet": {
+    "ucloudIdentifier": "39bc2ef4-7036-472f-bba5-a594337fbbbd",
+    "network": {
+      "ucloudIdentifier": "ff8da55e-657b-4dcf-979f-d2a18d202c69",
+      "hyperIdentifier": "dvs:dvs-71:dvportgroup-92"
+    }
+  },
+  "proto": "dhcp"
+}

@@ -1,0 +1,923 @@
+{
+  "vm": {
+    "resourceID": 0,
+    "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
+    "hyperIdentifier": "vm-96",
+    "name": "bb.administrator- testewmware 2021090181707433d9",
+    "displayName": "testewmware",
+    "cpus": 1,
+    "memory": 1024,
+    "networkInterfaces": [
+      {
+        "ucloudIdentifier": "2a77914d-4e17-46fe-be58-746d2ea89b4d",
+        "hyperIdentifier": "694fdeb61087e0721e9dec45bdd6355d:Network adapter 1",
+        "mac": "00:50:56:9e:6a:06",
+        "secundaryAddress": [],
+        "proto": "DHCP",
+        "vm": {
+          "resourceID": 0,
+          "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
+          "hyperIdentifier": "vm-96",
+          "name": "bb.administrator- testewmware 2021090181707433d9",
+          "displayName": "testewmware",
+          "onDemand": false,
+          "vdiDesktop": false,
+          "autoStart": false,
+          "osType": "Linux",
+          "osVersion": "centos7_64Guest",
+          "template": {
+            "ucloudIdentifier": "fc68e441-dea9-4446-a5ae-8b3a9355d7fd",
+            "hyperIdentifier": "vm-68",
+            "name": "CENTOS7 - TEMPLATE",
+            "osType": "linux"
+          },
+          "securityGroup": {
+            "resourceID": 0,
+            "ucloudIdentifier": "120f1d43-ad79-401c-b401-a8275a73bba1"
+          },
+          "orphan": false,
+          "protect": false,
+          "privateTemplate": false,
+          "launchInstance": false,
+          "launchPublicIp": false,
+          "launchVpn": false,
+          "isMonitoryZabbix": false
+        },
+        "subnet": {
+          "ucloudIdentifier": "729855c3-9f4d-4473-8580-b61281fab9c3",
+          "hyperIdentifier": "ee61dfbe-a62e-472a-808f-2e82d0060bd8",
+          "name": "jsub",
+          "cidr": "172.19.144.0/25",
+          "gateway": "172.19.144.126",
+          "nameServers": "172.19.144.125",
+          "rangeStart": "172.19.144.1",
+          "rangeEnd": "172.19.144.124",
+          "networkInterfaces": [],
+          "network": {
+            "resourceID": 0,
+            "ucloudIdentifier": "42cc8e89-b5e7-4fbd-b905-246fe8428deb",
+            "hyperIdentifier": "dvs:dvs-71:dvportgroup-91",
+            "displayName": "j-net",
+            "name": "PG j-net - VLAN 1507 1630445134534",
+            "external": false,
+            "vlan": "1507"
+          },
+          "systemShared": false,
+          "groupShared": false,
+          "connected": true,
+          "deleted": false,
+          "proxyManaged": true,
+          "sdnIp": "172.19.144.126",
+          "version": 4
+        },
+        "device": 0,
+        "securityGroupHyperIdentifier": "sg-7e6a4ab2-4ab0-4244-87e9-95c399ca0a62",
+        "securityGroups": []
+      }
+    ],
+    "container": {
+      "name": "BB-VMWARE",
+      "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+      "type": "vmware"
+    },
+    "disks": [
+      {
+        "ucloudIdentifier": "9d2caf71-80b3-4161-a0f4-621f9376bc7e",
+        "hyperIdentifier": "[datastore1 H31] bb.administrator- testewmware 2021090181707433d9/bb.administrator- testewmware 2021090181707433d9.vmdk",
+        "name": "/bb.administrator- testewmware 2021090181707433d9.vmdk",
+        "device": "0",
+        "virtualSize": 40960,
+        "bootable": true,
+        "virtualMachine": {
+          "resourceID": 0,
+          "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
+          "hyperIdentifier": "vm-96",
+          "name": "bb.administrator- testewmware 2021090181707433d9",
+          "displayName": "testewmware",
+          "onDemand": false,
+          "vdiDesktop": false,
+          "autoStart": false,
+          "orphan": false,
+          "protect": false,
+          "privateTemplate": false,
+          "launchInstance": false,
+          "launchPublicIp": false,
+          "launchVpn": false,
+          "isMonitoryZabbix": false
+        },
+        "storage": {
+          "ucloudIdentifier": "d88c3022-8f02-419a-acf9-847878a11c29",
+          "name": "datastore1 H31",
+          "displayName": "datastore1 H31",
+          "shared": true,
+          "type": "VM"
+        },
+        "snapshots": [],
+        "user": {
+          "ucloudIdentifier": "79975aa7-39c2-4a86-be77-861257cea245",
+          "name": "BB ADMINISTRATOR",
+          "login": "bb.administrator",
+          "email": "monicke@usto.re",
+          "phone": "99999999",
+          "position": "Administrator",
+          "business": "Banco do Brasil",
+          "cpuQuota": 0,
+          "memoryQuota": 0,
+          "diskQuota": 0,
+          "billingQuotaActivated": false,
+          "billingQuota": 0,
+          "diskQuotaUsage": 125128,
+          "cpuQuotaUsage": 10,
+          "memoryQuotaUsage": 13940,
+          "billingQuotaUsage": 0,
+          "ipQuota": 0,
+          "ipQuotaUsage": 2,
+          "quotaType": 1,
+          "userGroup": {
+            "name": "BB-AWS",
+            "permissions": [],
+            "vdcsAllowed": [],
+            "ucloudIdentifier": "ae1f0fe9-ae44-4b24-b701-5473eb5d0842",
+            "cpuQuota": 11,
+            "memoryQuota": 512000,
+            "diskQuota": 135168,
+            "ipQuota": 3,
+            "billingQuota": 569,
+            "diskQuotaUsage": 134364,
+            "cpuQuotaUsage": 11,
+            "memoryQuotaUsage": 14964,
+            "ipQuotaUsage": 2,
+            "billingQuotaUsage": 0,
+            "admin": {
+              "ucloudIdentifier": "79975aa7-39c2-4a86-be77-861257cea245",
+              "login": "bb.administrator",
+              "email": "monicke@usto.re",
+              "isDeleted": false,
+              "blockLoginUsingUcloud": false
+            },
+            "company": {
+              "ucloudIdentifier": "3295277d-ad4b-45cc-a520-7bba7f1d86ce",
+              "name": "BB-AWS",
+              "billingQuota": 569,
+              "dollarQuotation": 1,
+              "usnQuotation": 1,
+              "createdDate": 1609470000000,
+              "defaultCompanyCosts": [
+                {
+                  "ucloudIdentifier": "b53b9d3d-e373-4a19-9ab7-7763348bf025",
+                  "cost": 0,
+                  "type": "DEFAULT_VPN_COST"
+                },
+                {
+                  "ucloudIdentifier": "28451de1-0752-4e46-86e0-9bc9f344f458",
+                  "cost": 0,
+                  "type": "SERVICE_DATA_COST"
+                },
+                {
+                  "ucloudIdentifier": "75826949-87af-4b51-a672-da681746b3cd",
+                  "cost": 0.047,
+                  "type": "DEFAULT_MEMORY_COST"
+                },
+                {
+                  "ucloudIdentifier": "8b7fb3c9-7c66-494b-a15c-72692c0b86ae",
+                  "cost": 0,
+                  "type": "DEFAULT_LOADBALANCER_COST"
+                },
+                {
+                  "ucloudIdentifier": "13cdffc6-5f64-4569-b769-547ed4743fe9",
+                  "cost": 0,
+                  "type": "DEFAULT_PUBLIC_IP_COST"
+                },
+                {
+                  "ucloudIdentifier": "78df108d-9895-46f5-96e6-af0d4c724bf1",
+                  "cost": 0,
+                  "type": "DEFAULT_DISK_COST"
+                },
+                {
+                  "ucloudIdentifier": "ef077122-587d-4927-99dc-81b2244efcbb",
+                  "cost": 0,
+                  "type": "DEFAULT_DATA_OUT_COST"
+                },
+                {
+                  "ucloudIdentifier": "bebe2b99-3d5c-490f-8a7a-4a821877ceb0",
+                  "cost": 0,
+                  "type": "DEFAULT_DATA_IN_COST"
+                },
+                {
+                  "ucloudIdentifier": "6c5c718e-6560-46a4-b7bc-af318a0ef18c",
+                  "cost": 0.19,
+                  "type": "DEFAULT_CPUS_COST"
+                },
+                {
+                  "ucloudIdentifier": "47a60ac0-9d17-4d0f-b416-3642ec0d62db",
+                  "cost": 0,
+                  "type": "SERVICE_RATIO_COST"
+                },
+                {
+                  "ucloudIdentifier": "d81a0ebb-c549-4f3c-9377-6ed3f8b755f2",
+                  "cost": 0,
+                  "type": "DEFAULT_SNAPSHOT_COST"
+                },
+                {
+                  "ucloudIdentifier": "1db089a9-9b64-435e-b278-cfd2e04e2573",
+                  "cost": 0,
+                  "type": "DEFAULT_DNS_ZONE_COST"
+                }
+              ],
+              "admin": {
+                "ucloudIdentifier": "1772123a-cfb1-4409-ab81-122072f039cb",
+                "login": "bb.admin",
+                "isDeleted": false,
+                "blockLoginUsingUcloud": false
+              },
+              "quota": {
+                "ucloudIdentifier": "42cde6b6-759b-4d65-a673-a075294b1b4c",
+                "diskQuota": 1048576,
+                "diskQuotaUsage": 135168,
+                "cpuQuota": 500,
+                "cpuQuotaUsage": 11,
+                "memQuota": 512000,
+                "memQuotaUsage": 512000,
+                "billingQuota": 569,
+                "billingQuotaUsage": 569,
+                "ipQuota": 10,
+                "ipQuotaUsage": 3
+              },
+              "bwControl": false,
+              "currency": " BRL ",
+              "expired": false,
+              "experimentalAlertSettings": {
+                "alert": {
+                  "sAdmin": false,
+                  "cAdmin": false,
+                  "members": false
+                },
+                "expired": {
+                  "sAdmin": true,
+                  "cAdmin": false,
+                  "members": false
+                },
+                "quotaPercentAlert": 80,
+                "daysAlert": 10
+              }
+            }
+          },
+          "role": 991,
+          "currentCost": 0,
+          "activated": true,
+          "groupAdmin": true,
+          "companyAdmin": true,
+          "mfa": false,
+          "allowRequestApprovation": false,
+          "createdDate": 1629486390000,
+          "readOnly": false,
+          "skipActiveDirectoryLogin": true,
+          "isDeleted": false,
+          "blockLoginUsingUcloud": false
+        },
+        "encrypted": false,
+        "canDetached": true,
+        "deleteVolumeOnInstanceDelete": false,
+        "deviceNumber": 0
+      }
+    ],
+    "virtualDataCenter": {
+      "name": "BB-VMWARE",
+      "ucloudIdentifier": "121fae28-e638-404e-97f9-cf789cfa8732"
+    },
+    "deployedDate": 1630495128000,
+    "deployedSince": 810467,
+    "lastBilling": 1630495128000,
+    "vmPerformance": [
+      {
+        "date": 1631305534000,
+        "freeMemory": 584,
+        "cpuUsage": 0.013,
+        "memory": 1024,
+        "cpus": 1,
+        "networkIn": 0,
+        "networkOut": 0,
+        "diskReadOps": 0,
+        "diskWriteOps": 0,
+        "host": {
+          "ucloudIdentifier": "ab043779-1835-4830-84f1-33b897d2fa59",
+          "hyperIdentifier": "host-15",
+          "name": "192.168.100.31",
+          "ip": "192.168.100.31",
+          "mac": "0c:c4:7a:3a:d1:c6",
+          "container": {
+            "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+            "name": "BB-VMWARE",
+            "type": "vmware",
+            "providerName": "BB-VMWARE",
+            "toBilling": false
+          },
+          "costHostObjects": [],
+          "cpuUsage": 0,
+          "cpus": 1,
+          "memory": 1024,
+          "freeMemory": 0,
+          "vms": [],
+          "storages": [],
+          "hostPerformance": [],
+          "pnics": []
+        },
+        "status": 1001
+      }
+    ],
+    "cloudPassword": "82278ad970fbb995513b559d3e2ebad7",
+    "onDemand": false,
+    "user": {
+      "ucloudIdentifier": "9b1cde96-fc3e-463d-8c53-174099ab4091",
+      "name": "BB VMWARE",
+      "login": "bb.vmware",
+      "email": "suporte@usto.re",
+      "phone": "1132245271",
+      "position": "Admin",
+      "business": "Banco do Brasil",
+      "cpuQuota": 0,
+      "memoryQuota": 0,
+      "diskQuota": 0,
+      "billingQuotaActivated": false,
+      "billingQuota": 0,
+      "diskQuotaUsage": 122880,
+      "cpuQuotaUsage": 7,
+      "memoryQuotaUsage": 19456,
+      "billingQuotaUsage": 0,
+      "ipQuota": 0,
+      "ipQuotaUsage": 0,
+      "quotaType": 1,
+      "userGroup": {
+        "name": "BB-VMWARE",
+        "permissions": [],
+        "vdcsAllowed": [],
+        "ucloudIdentifier": "b8f562b2-2575-4656-b689-48a06e989b0d",
+        "cpuQuota": 500,
+        "memoryQuota": 512000,
+        "diskQuota": 1048576,
+        "ipQuota": 100,
+        "billingQuota": 100000000,
+        "diskQuotaUsage": 122880,
+        "cpuQuotaUsage": 7,
+        "memoryQuotaUsage": 19456,
+        "ipQuotaUsage": 0,
+        "billingQuotaUsage": 0,
+        "admin": {
+          "ucloudIdentifier": "1772123a-cfb1-4409-ab81-122072f039cb",
+          "login": "bb.admin",
+          "email": "monicke@usto.re",
+          "isDeleted": false,
+          "blockLoginUsingUcloud": false
+        },
+        "company": {
+          "ucloudIdentifier": "970b91e0-c4d8-4d22-9544-a6c54ede9ba5",
+          "name": "BB-VMWARE",
+          "billingQuota": 1000000000,
+          "dollarQuotation": 1,
+          "usnQuotation": 1,
+          "createdDate": 1609470000000,
+          "defaultCompanyCosts": [
+            {
+              "ucloudIdentifier": "3493dddd-410a-4a63-93ef-87c4c1e0b56d",
+              "cost": 0,
+              "type": "cpu",
+              "tag": "cpu",
+              "description": "cpu"
+            }
+          ],
+          "admin": {
+            "ucloudIdentifier": "1772123a-cfb1-4409-ab81-122072f039cb",
+            "login": "bb.admin",
+            "isDeleted": false,
+            "blockLoginUsingUcloud": false
+          },
+          "quota": {
+            "ucloudIdentifier": "3e6b06a0-0f5d-48a8-92da-f0dae88a12a1",
+            "diskQuota": 1048576,
+            "diskQuotaUsage": 1048576,
+            "cpuQuota": 500,
+            "cpuQuotaUsage": 500,
+            "memQuota": 512000,
+            "memQuotaUsage": 512000,
+            "billingQuota": 1000000000,
+            "billingQuotaUsage": 100000000,
+            "ipQuota": 500,
+            "ipQuotaUsage": 100
+          },
+          "bwControl": false,
+          "currency": "BRL",
+          "expired": false,
+          "experimentalAlertSettings": {
+            "alert": {
+              "sAdmin": false,
+              "cAdmin": false,
+              "members": false
+            },
+            "expired": {
+              "sAdmin": true,
+              "cAdmin": false,
+              "members": false
+            },
+            "quotaPercentAlert": 80,
+            "daysAlert": 10
+          }
+        }
+      },
+      "role": 520,
+      "currentCost": 0,
+      "activated": true,
+      "groupAdmin": false,
+      "companyAdmin": false,
+      "mfa": false,
+      "allowRequestApprovation": false,
+      "createdDate": 1629467733000,
+      "readOnly": false,
+      "skipActiveDirectoryLogin": true,
+      "isDeleted": false,
+      "blockLoginUsingUcloud": false
+    },
+    "vdiDesktop": false,
+    "autoStart": false,
+    "osType": "Linux",
+    "distro": "CENTOS",
+    "osVersion": "centos7_64Guest",
+    "template": {
+      "ucloudIdentifier": "fc68e441-dea9-4446-a5ae-8b3a9355d7fd",
+      "hyperIdentifier": "vm-68",
+      "name": "CENTOS7 - TEMPLATE",
+      "memory": 2048,
+      "vcpus": 2,
+      "size": 40960,
+      "osType": "Linux",
+      "distro": {
+        "code": "CENTOS",
+        "description": "Centos",
+        "name": "CENTOS"
+      },
+      "systemTemplate": false,
+      "price": 0,
+      "additionalCpuPrice": 0,
+      "additionalMemPrice": 0,
+      "additionalDiskPrice": 0,
+      "container": {
+        "name": "BB-VMWARE",
+        "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+        "type": "vmware"
+      },
+      "user": {
+        "ucloudIdentifier": "4ce07366-541b-43f3-9355-a953091cbaa8",
+        "name": "uCloud",
+        "login": "ucloud",
+        "email": "monicke@usto.re",
+        "phone": "99999999",
+        "position": "Admin",
+        "business": "Ustore",
+        "cpuQuota": 0,
+        "memoryQuota": 0,
+        "diskQuota": 0,
+        "billingQuotaActivated": false,
+        "billingQuota": 0,
+        "diskQuotaUsage": 1024,
+        "cpuQuotaUsage": 0,
+        "memoryQuotaUsage": 0,
+        "billingQuotaUsage": 0,
+        "ipQuota": 0,
+        "ipQuotaUsage": 0,
+        "quotaType": 1,
+        "userGroup": {
+          "name": "BB-AWS",
+          "permissions": [],
+          "vdcsAllowed": [],
+          "ucloudIdentifier": "ae1f0fe9-ae44-4b24-b701-5473eb5d0842",
+          "cpuQuota": 11,
+          "memoryQuota": 512000,
+          "diskQuota": 135168,
+          "ipQuota": 3,
+          "billingQuota": 569,
+          "diskQuotaUsage": 134364,
+          "cpuQuotaUsage": 11,
+          "memoryQuotaUsage": 14964,
+          "ipQuotaUsage": 2,
+          "billingQuotaUsage": 0,
+          "admin": {
+            "ucloudIdentifier": "79975aa7-39c2-4a86-be77-861257cea245",
+            "login": "bb.administrator",
+            "email": "monicke@usto.re",
+            "isDeleted": false,
+            "blockLoginUsingUcloud": false
+          },
+          "company": {
+            "ucloudIdentifier": "3295277d-ad4b-45cc-a520-7bba7f1d86ce",
+            "name": "BB-AWS",
+            "billingQuota": 569,
+            "dollarQuotation": 1,
+            "usnQuotation": 1,
+            "createdDate": 1609470000000,
+            "defaultCompanyCosts": [
+              {
+                "ucloudIdentifier": "b53b9d3d-e373-4a19-9ab7-7763348bf025",
+                "cost": 0,
+                "type": "DEFAULT_VPN_COST"
+              },
+              {
+                "ucloudIdentifier": "28451de1-0752-4e46-86e0-9bc9f344f458",
+                "cost": 0,
+                "type": "SERVICE_DATA_COST"
+              },
+              {
+                "ucloudIdentifier": "75826949-87af-4b51-a672-da681746b3cd",
+                "cost": 0.047,
+                "type": "DEFAULT_MEMORY_COST"
+              },
+              {
+                "ucloudIdentifier": "8b7fb3c9-7c66-494b-a15c-72692c0b86ae",
+                "cost": 0,
+                "type": "DEFAULT_LOADBALANCER_COST"
+              },
+              {
+                "ucloudIdentifier": "13cdffc6-5f64-4569-b769-547ed4743fe9",
+                "cost": 0,
+                "type": "DEFAULT_PUBLIC_IP_COST"
+              },
+              {
+                "ucloudIdentifier": "78df108d-9895-46f5-96e6-af0d4c724bf1",
+                "cost": 0,
+                "type": "DEFAULT_DISK_COST"
+              },
+              {
+                "ucloudIdentifier": "ef077122-587d-4927-99dc-81b2244efcbb",
+                "cost": 0,
+                "type": "DEFAULT_DATA_OUT_COST"
+              },
+              {
+                "ucloudIdentifier": "bebe2b99-3d5c-490f-8a7a-4a821877ceb0",
+                "cost": 0,
+                "type": "DEFAULT_DATA_IN_COST"
+              },
+              {
+                "ucloudIdentifier": "6c5c718e-6560-46a4-b7bc-af318a0ef18c",
+                "cost": 0.19,
+                "type": "DEFAULT_CPUS_COST"
+              },
+              {
+                "ucloudIdentifier": "47a60ac0-9d17-4d0f-b416-3642ec0d62db",
+                "cost": 0,
+                "type": "SERVICE_RATIO_COST"
+              },
+              {
+                "ucloudIdentifier": "d81a0ebb-c549-4f3c-9377-6ed3f8b755f2",
+                "cost": 0,
+                "type": "DEFAULT_SNAPSHOT_COST"
+              },
+              {
+                "ucloudIdentifier": "1db089a9-9b64-435e-b278-cfd2e04e2573",
+                "cost": 0,
+                "type": "DEFAULT_DNS_ZONE_COST"
+              }
+            ],
+            "admin": {
+              "ucloudIdentifier": "1772123a-cfb1-4409-ab81-122072f039cb",
+              "login": "bb.admin",
+              "isDeleted": false,
+              "blockLoginUsingUcloud": false
+            },
+            "quota": {
+              "ucloudIdentifier": "42cde6b6-759b-4d65-a673-a075294b1b4c",
+              "diskQuota": 1048576,
+              "diskQuotaUsage": 135168,
+              "cpuQuota": 500,
+              "cpuQuotaUsage": 11,
+              "memQuota": 512000,
+              "memQuotaUsage": 512000,
+              "billingQuota": 569,
+              "billingQuotaUsage": 569,
+              "ipQuota": 10,
+              "ipQuotaUsage": 3
+            },
+            "bwControl": false,
+            "currency": " BRL ",
+            "expired": false,
+            "experimentalAlertSettings": {
+              "alert": {
+                "sAdmin": false,
+                "cAdmin": false,
+                "members": false
+              },
+              "expired": {
+                "sAdmin": true,
+                "cAdmin": false,
+                "members": false
+              },
+              "quotaPercentAlert": 80,
+              "daysAlert": 10
+            }
+          }
+        },
+        "role": 991,
+        "currentCost": 0,
+        "activated": true,
+        "groupAdmin": false,
+        "companyAdmin": true,
+        "mfa": false,
+        "allowRequestApprovation": false,
+        "createdDate": 1629348869000,
+        "readOnly": false,
+        "skipActiveDirectoryLogin": true,
+        "isDeleted": false,
+        "blockLoginUsingUcloud": false
+      },
+      "userShared": true,
+      "isPrivate": false
+    },
+    "lastAction": "START",
+    "flavor": {
+      "ucloudIdentifier": "27262775-f369-4e45-86c7-1bb77570b733",
+      "name": "vm-small-1vCPU-1G-RAM-10Ghd",
+      "memory": 1024,
+      "vCPU": 1,
+      "piopsOptimized": false,
+      "size": 0,
+      "container": {
+        "name": "BB-VMWARE",
+        "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+        "type": "vmware"
+      },
+      "editable": false
+    },
+    "securityGroup": {
+      "resourceID": 0,
+      "ucloudIdentifier": "120f1d43-ad79-401c-b401-a8275a73bba1",
+      "hyperIdentifier": "sg-7e6a4ab2-4ab0-4244-87e9-95c399ca0a62",
+      "name": "demovmware",
+      "rules": [
+        {
+          "ucloudIdentifier": "50d15c08-4f09-4097-a272-6003f19211e6",
+          "direction": {
+            "code": 2,
+            "name": "OUTPUT"
+          },
+          "type": {
+            "code": "0",
+            "name": "All Protocols"
+          },
+          "protocol": {
+            "code": 0,
+            "name": "ALL"
+          },
+          "portRange": "1-65535",
+          "remote": "0.0.0.0/0"
+        },
+        {
+          "ucloudIdentifier": "1c4f3208-7a88-471e-8d6b-92deb93eb33e",
+          "direction": {
+            "code": 1,
+            "name": "INPUT"
+          },
+          "type": {
+            "code": "22",
+            "name": "SSH"
+          },
+          "protocol": {
+            "code": 6,
+            "name": "TCP"
+          },
+          "portRange": "22",
+          "remote": "0.0.0.0/0"
+        }
+      ],
+      "user": {
+        "ucloudIdentifier": "79975aa7-39c2-4a86-be77-861257cea245",
+        "name": "BB ADMINISTRATOR",
+        "login": "bb.administrator",
+        "email": "monicke@usto.re",
+        "phone": "99999999",
+        "position": "Administrator",
+        "business": "Banco do Brasil",
+        "cpuQuota": 0,
+        "memoryQuota": 0,
+        "diskQuota": 0,
+        "billingQuotaActivated": false,
+        "billingQuota": 0,
+        "diskQuotaUsage": 125128,
+        "cpuQuotaUsage": 10,
+        "memoryQuotaUsage": 13940,
+        "billingQuotaUsage": 0,
+        "ipQuota": 0,
+        "ipQuotaUsage": 2,
+        "quotaType": 1,
+        "userGroup": {
+          "name": "BB-AWS",
+          "permissions": [],
+          "vdcsAllowed": [],
+          "ucloudIdentifier": "ae1f0fe9-ae44-4b24-b701-5473eb5d0842",
+          "cpuQuota": 11,
+          "memoryQuota": 512000,
+          "diskQuota": 135168,
+          "ipQuota": 3,
+          "billingQuota": 569,
+          "diskQuotaUsage": 134364,
+          "cpuQuotaUsage": 11,
+          "memoryQuotaUsage": 14964,
+          "ipQuotaUsage": 2,
+          "billingQuotaUsage": 0,
+          "admin": {
+            "ucloudIdentifier": "79975aa7-39c2-4a86-be77-861257cea245",
+            "login": "bb.administrator",
+            "email": "monicke@usto.re",
+            "isDeleted": false,
+            "blockLoginUsingUcloud": false
+          },
+          "company": {
+            "ucloudIdentifier": "3295277d-ad4b-45cc-a520-7bba7f1d86ce",
+            "name": "BB-AWS",
+            "billingQuota": 569,
+            "dollarQuotation": 1,
+            "usnQuotation": 1,
+            "createdDate": 1609470000000,
+            "defaultCompanyCosts": [
+              {
+                "ucloudIdentifier": "b53b9d3d-e373-4a19-9ab7-7763348bf025",
+                "cost": 0,
+                "type": "DEFAULT_VPN_COST"
+              },
+              {
+                "ucloudIdentifier": "28451de1-0752-4e46-86e0-9bc9f344f458",
+                "cost": 0,
+                "type": "SERVICE_DATA_COST"
+              },
+              {
+                "ucloudIdentifier": "75826949-87af-4b51-a672-da681746b3cd",
+                "cost": 0.047,
+                "type": "DEFAULT_MEMORY_COST"
+              },
+              {
+                "ucloudIdentifier": "8b7fb3c9-7c66-494b-a15c-72692c0b86ae",
+                "cost": 0,
+                "type": "DEFAULT_LOADBALANCER_COST"
+              },
+              {
+                "ucloudIdentifier": "13cdffc6-5f64-4569-b769-547ed4743fe9",
+                "cost": 0,
+                "type": "DEFAULT_PUBLIC_IP_COST"
+              },
+              {
+                "ucloudIdentifier": "78df108d-9895-46f5-96e6-af0d4c724bf1",
+                "cost": 0,
+                "type": "DEFAULT_DISK_COST"
+              },
+              {
+                "ucloudIdentifier": "ef077122-587d-4927-99dc-81b2244efcbb",
+                "cost": 0,
+                "type": "DEFAULT_DATA_OUT_COST"
+              },
+              {
+                "ucloudIdentifier": "bebe2b99-3d5c-490f-8a7a-4a821877ceb0",
+                "cost": 0,
+                "type": "DEFAULT_DATA_IN_COST"
+              },
+              {
+                "ucloudIdentifier": "6c5c718e-6560-46a4-b7bc-af318a0ef18c",
+                "cost": 0.19,
+                "type": "DEFAULT_CPUS_COST"
+              },
+              {
+                "ucloudIdentifier": "47a60ac0-9d17-4d0f-b416-3642ec0d62db",
+                "cost": 0,
+                "type": "SERVICE_RATIO_COST"
+              },
+              {
+                "ucloudIdentifier": "d81a0ebb-c549-4f3c-9377-6ed3f8b755f2",
+                "cost": 0,
+                "type": "DEFAULT_SNAPSHOT_COST"
+              },
+              {
+                "ucloudIdentifier": "1db089a9-9b64-435e-b278-cfd2e04e2573",
+                "cost": 0,
+                "type": "DEFAULT_DNS_ZONE_COST"
+              }
+            ],
+            "admin": {
+              "ucloudIdentifier": "1772123a-cfb1-4409-ab81-122072f039cb",
+              "login": "bb.admin",
+              "isDeleted": false,
+              "blockLoginUsingUcloud": false
+            },
+            "quota": {
+              "ucloudIdentifier": "42cde6b6-759b-4d65-a673-a075294b1b4c",
+              "diskQuota": 1048576,
+              "diskQuotaUsage": 135168,
+              "cpuQuota": 500,
+              "cpuQuotaUsage": 11,
+              "memQuota": 512000,
+              "memQuotaUsage": 512000,
+              "billingQuota": 569,
+              "billingQuotaUsage": 569,
+              "ipQuota": 10,
+              "ipQuotaUsage": 3
+            },
+            "bwControl": false,
+            "currency": " BRL ",
+            "expired": false,
+            "experimentalAlertSettings": {
+              "alert": {
+                "sAdmin": false,
+                "cAdmin": false,
+                "members": false
+              },
+              "expired": {
+                "sAdmin": true,
+                "cAdmin": false,
+                "members": false
+              },
+              "quotaPercentAlert": 80,
+              "daysAlert": 10
+            }
+          }
+        },
+        "role": 991,
+        "currentCost": 0,
+        "activated": true,
+        "groupAdmin": true,
+        "companyAdmin": true,
+        "mfa": false,
+        "allowRequestApprovation": false,
+        "createdDate": 1629486390000,
+        "readOnly": false,
+        "skipActiveDirectoryLogin": true,
+        "isDeleted": false,
+        "blockLoginUsingUcloud": false
+      },
+      "container": {
+        "name": "BB-VMWARE",
+        "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+        "type": "vmware"
+      }
+    },
+    "runningTime": 0,
+    "stoppedTime": 0,
+    "currentCost": 0,
+    "billingType": {
+      "code": 1,
+      "name": "RESOURCE",
+      "description": "Per Resource Allocation"
+    },
+    "orphan": false,
+    "protect": false,
+    "privateTemplate": false,
+    "launchInstance": false,
+    "dataTransferIn": 0,
+    "dataTransferOut": 0,
+    "dataInCost": 0,
+    "dataOutCost": 0,
+    "dataInCostRef": 0,
+    "dataOutCostRef": 0,
+    "launchPublicIp": false,
+    "launchVpn": false,
+    "isMonitoryZabbix": false
+  },
+  "device": null,
+  "subnet": {
+    "ucloudIdentifier": "39bc2ef4-7036-472f-bba5-a594337fbbbd",
+    "hyperIdentifier": "4e0954d0-405b-4b35-9e77-f0b0e27dad4e",
+    "name": "demovmware",
+    "cidr": "172.19.115.0/25",
+    "gateway": "172.19.115.126",
+    "nameServers": "172.19.115.125",
+    "rangeStart": "172.19.115.1",
+    "rangeEnd": "172.19.115.124",
+    "networkInterfaces": [],
+    "network": {
+      "resourceID": 0,
+      "ucloudIdentifier": "ff8da55e-657b-4dcf-979f-d2a18d202c69",
+      "hyperIdentifier": "dvs:dvs-71:dvportgroup-92",
+      "displayName": "unet",
+      "name": "PG unet - VLAN 1684 1630445671912",
+      "external": false,
+      "systemShared": false,
+      "groupShared": false,
+      "container": {
+        "name": "BB-VMWARE",
+        "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+        "type": "vmware"
+      },
+      "vlan": "1684"
+    },
+    "systemShared": false,
+    "groupShared": false,
+    "connected": true,
+    "deleted": false,
+    "proxyManaged": true,
+    "sdnIp": "172.19.115.126",
+    "dhcpIp": "172.19.115.125",
+    "version": 4,
+    "metadataCidr": "169.254.29.104/30",
+    "metadataBridgeIp": "169.254.29.105",
+    "metadataNamespaceIp": "169.254.29.106"
+  },
+  "proto": "dhcp",
+  "ipAddress": null,
+  "netmask": null,
+  "gateway": null,
+  "dns": null,
+  "securityGroups": null
+}
