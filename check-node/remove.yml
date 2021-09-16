@@ -1,0 +1,69 @@
+- name: Preparando ambiente...
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install node
+      shell: |
+            curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+            sudo yum install nodejs -y
+      args:
+        creates: /usr/bin/npm
+
+    - name: Copy script to destination
+      ansible.builtin.copy:
+        src: "files/{{ item }}"
+        dest: "/tmp/{{ item }}"
+        mode: '0644'
+      loop:
+        - package.json
+        - package-lock.json
+        #- script-umock.js
+        - remove.js
+        - result.txt
+
+    - name: Install package xhr2
+      npm:
+        name: xhr2
+        state: latest
+        global: yes
+        path: /tmp
+
+    - name: Capturando arquivo do JSON
+      shell: cat /tmp/result.txt
+      register: result
+
+    - name: Lendo JSON TXT do Result
+      set_fact:
+        jsondata_result: "{{ result.stdout | from_json }}"
+
+    - name: Pegar ID do result
+      set_fact:
+        item_id: "{{ jsondata_result | json_query(jmesquery) }}"
+      vars:
+        jmesquery: 'id'
+
+    - name: Executando script-js
+      command: node /tmp/remove.js {{ item_id }}
+      register: output
+
+    - name: Salvar JSON em variavel
+      set_fact:
+        jsondata: "{{ output.stdout | from_json }}"
+    
+    - name: Pegar Status
+      set_fact:
+        item_status: "{{ jsondata | json_query(jmesquery) }}"
+      vars:
+        jmesquery: 'status'
+
+    - name: Saida se malsucedido
+      fail: 
+         msg: " O retorno deu status '{{ item_status }}'. {{ output.stdout }}"
+      when: item_status != '200' and item_status != '201'
+      
+    - local_action: copy content={{ output.stdout }} dest=files/result.txt
+
+    - name: Print result
+      ansible.builtin.debug:
+        var: output.stdout_lines

@@ -1,0 +1,1 @@
+{"status": 200, "outputs": {"hostname": "teste.bb.com.br.", "zone": "bb.com.br", "ttl": "3600"}, "id": "112", "createdAt": "2021-09-16T11:40:26.151Z", "inputs": {"hostname": "teste.bb.com.br"}}

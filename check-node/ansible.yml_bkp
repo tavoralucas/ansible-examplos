@@ -18,7 +18,9 @@
       loop:
         - package.json
         - package-lock.json
-        - script-umock.js
+        #- script-umock.js
+        - check.js
+        - resultado
 
     - name: Install package xhr2
       npm:
@@ -26,10 +28,24 @@
         state: latest
         global: yes
         path: /tmp
+
+    - name: Capturando arquivo do JSON
+      shell: cat resultado
+      register: result
+
+    - name: Salvar JSON em variavel
+      set_fact:
+        jsondata: "{{ result.stdout | from_json }}"
+
+    - name: Set ID
+      set_fact:
+         item_id: "{{ jsondata | json_query(jmesquery) }}"
       
     - name: Executando script-js
-      command: node /tmp/script-umock.js
+      command: node /tmp/check.js {{ item_id }}
       register: output
+
+    - local_action: copy content={{ output.stdout_lines }} dest=resultado
 
     - name: Print result
       ansible.builtin.debug:
