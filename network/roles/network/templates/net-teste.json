@@ -1,12 +1,12 @@
 {
   "vm": {
-    "ucloudIdentifier": "f30162d6-33ab-44f9-a2b4-dd9a19341ed2"
+    "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
   },
   "subnet": {
-    "ucloudIdentifier": "39bc2ef4-7036-472f-bba5-a594337fbbbd",
+    "ucloudIdentifier": "729855c3-9f4d-4473-8580-b61281fab9c3",
     "network": {
-      "ucloudIdentifier": "ff8da55e-657b-4dcf-979f-d2a18d202c69",
-      "hyperIdentifier": "dvs:dvs-71:dvportgroup-92"
+      "ucloudIdentifier": "42cc8e89-b5e7-4fbd-b905-246fe8428deb",
+      "hyperIdentifier": "dvs:dvs-71:dvportgroup-91"
     }
   },
   "proto": "dhcp"

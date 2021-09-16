@@ -1,12 +1,12 @@
 ---
-# defaults file for config-vm
+# defaults file for clone-vm
 
-ucloud_login: "bb.vmware"
+ucloud_login: "bb.administrator"
 ucloud_password: "B4nc0Br4s1l!"
 ucloud_uri: "https://demobbucloud.operacaomulticloud.com"
 api_basepath: "ucloud/rest"
 
-vm_ucloud_identifier: "f30162d6-33ab-44f9-a2b4-dd9a19341ed2"
+vm_ucloud_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
 vm_to_clone_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
 vm_name: "testewmware"
 vm_disk_ucloud_identifier: "d88c3022-8f02-419a-acf9-847878a11c29"

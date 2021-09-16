@@ -1,11 +1,11 @@
 {
-  "displayName": "vmware-demo1509",
+  "displayName": "vmware-clone1609",
   "networkInterfaces": [
     {
-      "ucloudIdentifier": "b629badd-59a7-4708-b5e7-09c0a18d63eb",
-      "hyperIdentifier": "ba948c477f9166a05ab0fca8e2b473e7:Network adapter 2",
+      "ucloudIdentifier": "2a77914d-4e17-46fe-be58-746d2ea89b4d",
+      "hyperIdentifier": "694fdeb61087e0721e9dec45bdd6355d:Network adapter 1",
       "subnet": {
-        "ucloudIdentifier": "39bc2ef4-7036-472f-bba5-a594337fbbbd"
+        "ucloudIdentifier": "729855c3-9f4d-4473-8580-b61281fab9c3"
       }
     }
   ]
