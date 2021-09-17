@@ -14,7 +14,7 @@
   register: token
 
 - name: Edit json
-  shell: sh /root/vmware-novo/start-vm/teste.sh
+  shell: sh teste.sh
 
 - name: Create network and attach to VM
   uri:
