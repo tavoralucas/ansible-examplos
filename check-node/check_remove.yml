@@ -30,7 +30,7 @@
         path: /tmp
 
     - name: Capturando arquivo do JSON
-      shell: cat /tmp/result.txt
+      shell: cat results/result.txt
       register: result
 
     - name: Lendo JSON TXT do Result
@@ -62,7 +62,7 @@
          msg: " O retorno deu status '{{ item_status }}'. {{ output.stdout }}"
       when: item_status != '400' and item_status != '404'
       
-    - local_action: copy content={{ output.stdout }} dest=files/result.txt
+    - local_action: copy content={{ output.stdout }} dest=results/result.txt
 
     - name: Print result
       ansible.builtin.debug:
