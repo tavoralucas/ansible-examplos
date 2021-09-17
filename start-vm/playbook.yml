@@ -3,6 +3,6 @@
   become: true
 
   roles:
-    - role: network
+    - role: start-vm
 
 

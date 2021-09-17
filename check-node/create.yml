@@ -30,7 +30,7 @@
         path: /tmp
 
     - name: Executando script-js
-      command: node /tmp/create.js
+      command: node files/create.js
       register: output
 
     - name: Salvar JSON em variavel

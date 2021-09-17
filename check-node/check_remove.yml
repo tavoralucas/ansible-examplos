@@ -44,7 +44,7 @@
         jmesquery: 'id'
 
     - name: Executando script-js
-      command: node /tmp/check.js {{ item_id }}
+      command: node files/check.js {{ item_id }}
       register: output
 
     - name: Salvar JSON em variavel

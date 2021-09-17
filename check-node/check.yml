@@ -29,6 +29,8 @@
         global: yes
         path: /tmp
 
+    - name: Ls na pasta
+      shell: ls results
     - name: Capturando arquivo do JSON
       shell: cat results/result.txt
       register: result
@@ -44,7 +46,7 @@
         jmesquery: 'id'
 
     - name: Executando script-js
-      command: node /tmp/check.js {{ item_id }}
+      command: node files/check.js {{ item_id }}
       register: output
 
     - name: Salvar JSON em variavel

@@ -13,9 +13,16 @@
     return_content: true
   register: token
 
+- name: Edit json
+  shell: sh teste.sh
+
+- name: UUID VM
+  command: cat results/result.txt
+  register: vm_uuid
+
 - name: Create network and attach to VM
   uri:
-    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_ucloud_identifier }}/vnic"
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_uuid.stdout }}/vnic"
     method: POST
     body: "{{ lookup('template','net-teste.json') }}"
     status_code: 200

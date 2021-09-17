@@ -14,9 +14,17 @@
     return_content: true
   register: token
 
+- name: Edit json
+  shell: sh teste.sh
+
+- name: UUID VM
+  command: cat results/result.txt
+  register: vm_uuid
+
+
 - name: Create disk and attach to VM
   uri:
-    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_ucloud_identifier }}/disk"
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_uuid.stdout }}/disk"
     method: POST
     body: "{{ lookup('template','new-disk-to-vm.json') }}"
     status_code: 200
@@ -46,21 +54,3 @@
   until: "{{ task_status.content | from_json | json_query(\"status\") }} == 200"
   retries: 30
   delay: 5
-
-- name: Install MariaDB
-  yum:
-    name: mariadb-server
-    state: present
-  vars:
-    ansible_python_interpreter: /usr/bin/python2
-
-- name: Enable and start MariaDB service
-  ansible.builtin.systemd:
-    name: mariadb
-    enabled: yes
-    state: started
-
-- name: Wait for MariaDB running port
-  wait_for:
-    port: 3306
-    host: 0.0.0.0

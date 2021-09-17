@@ -1,12 +1,11 @@
 {
-  "name": "{{ suffix }}-disk",
-  "ucloudIdentifier": "a2ebc349-e0a8-430d-b130-e22fbdba1fee",
+  "name": "demo-bbb-disk-ansibled-to-attached",
   "virtualSize": 2,
   "storage": {
     "ucloudIdentifier": "d88c3022-8f02-419a-acf9-847878a11c29",
     "hyperIdentifier": "datastore-39",
-    "name": "disconovoclone",
-    "displayName": "disconovoclone",
+    "name": "datastore1 disk demo ansible",
+    "displayName": "datastore1 disk demo ansible",
     "uploadVms": false,
     "container": {
       "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
@@ -14,8 +13,7 @@
       "type": "vmware",
       "toBilling": false
     },
-    "shared": false
+    "shared": true
   },
-  "encrypted": false,
-  "password": ""
+  "encrypted": false
 }

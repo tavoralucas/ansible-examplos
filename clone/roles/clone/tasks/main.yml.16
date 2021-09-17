@@ -1,0 +1,34 @@
+---
+- name: Generate random string
+  set_fact:
+    suffix: "{{ lookup('password', '/dev/null chars=ascii_lowercase,digits length=8') }}"
+
+- name: Login to ucloud
+  uri:
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ api_login }}"
+    method: POST
+    body: '{ "login": "{{ ucloud_login }}", "password": "{{ ucloud_password }}" }'
+    status_code: 200
+    body_format: json
+    return_content: true
+  register: token
+
+- name: Wait until clone finish
+  uri:
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ task_status }}/{{ new_clone_task_identifier }}"
+    method: GET
+    status_code: 200
+    body_format: json
+    return_content: true
+    headers:
+      token: "{{ token.content }}"
+      accept: "application/json"
+  register: task_status
+  until: "{{ task_status.content | from_json | json_query(\"status\") }} == 200"
+  retries: 30
+  delay: 5
+
+- name: Print VMUID
+  debug: msg= "{{ task_status.content | json_query(jmesquery) }}"
+  vars:
+    jmesquery: "ucloudIdentifier"

@@ -13,11 +13,14 @@
     return_content: true
   register: token
 
-- name: Create clone VM
+- name: Edit json
+  shell: sh /root/vmware-novo/start-vm/teste.sh
+
+- name: Create network and attach to VM
   uri:
-    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/{{ vm_ucloud_identifier }}/clone"
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/vm/start"
     method: POST
-    body: "{{ lookup('template','clone.json') }}"
+    body: "{{ lookup('template','start-vm.json') }}"
     status_code: 200
     body_format: json
     return_content: true
@@ -25,15 +28,15 @@
       token: "{{ token.content }}"
       accept: "application/json"
       Content-Type: "application/json"
-  register: new_clone_to_vm
+  register: new_network_to_vm
 
-- name: Set clone task identifier fact
+- name: Set network task identifier fact
   set_fact:
-   new_clone_task_identifier: "{{ new_clone_to_vm.content | from_json | json_query(\"ucloudIdentifier\") }}"
+   new_network_task_identifier: "{{ new_network_to_vm.content | from_json | json_query(\"ucloudIdentifier\") }}"
 
-- name: Wait until clone finish
+- name: Wait until new network created and attached
   uri:
-    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ task_status }}/{{ new_clone_task_identifier }} "
+    url: "{{ ucloud_uri }}/{{ api_basepath }}/{{ task_status }}/{{ new_network_task_identifier }}"
     method: GET
     status_code: 200
     body_format: json
@@ -41,10 +44,7 @@
     headers:
       token: "{{ token.content }}"
       accept: "application/json"
-  register: jsonContent
-  until: " (jsonContent.content | from_json) ['status'] == 200"
+  register: task_status
+  until: "{{ task_status.content | from_json | json_query(\"status\") }} == 200"
   retries: 30
   delay: 5
-
-- name: save
-  local_action: copy content={{(jsonContent.json.metadata | from_json)['ucloudIdentifier']}} dest=result.txt

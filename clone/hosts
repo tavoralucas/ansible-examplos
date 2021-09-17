@@ -1,2 +1,1 @@
-[azure]
-20.197.176.119 ansible_connection=ssh ansible_user=ucloud ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
+
