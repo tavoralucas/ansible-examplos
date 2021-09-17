@@ -23,7 +23,7 @@
         - result.txt
 
     - name: Install package xhr2
-      npm:
+      community.general.npm:
         name: xhr2
         state: latest
         global: yes
