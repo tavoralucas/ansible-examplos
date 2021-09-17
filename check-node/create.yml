@@ -26,7 +26,7 @@
       community.general.npm:
         name: xhr2
         state: latest
-        global: yes
+        global: no
         path: files
 
     - name: Executando script-js
