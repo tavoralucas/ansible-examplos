@@ -27,7 +27,7 @@
         name: xhr2
         state: latest
         global: yes
-        path: /tmp
+        path: files
 
     - name: Capturando arquivo do JSON
       shell: cat results/result.txt

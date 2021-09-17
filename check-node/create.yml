@@ -27,7 +27,7 @@
         name: xhr2
         state: latest
         global: yes
-        path: /tmp
+        path: files
 
     - name: Executando script-js
       command: node files/create.js

@@ -27,7 +27,7 @@
         name: xhr2
         state: latest
         global: yes
-        path: /tmp
+        path: files
 
     - name: Ls na pasta
       shell: ls results
