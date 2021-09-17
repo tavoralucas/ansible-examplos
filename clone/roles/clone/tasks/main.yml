@@ -47,4 +47,4 @@
   delay: 5
 
 - name: save
-  local_action: copy content={{(jsonContent.json.metadata | from_json)['ucloudIdentifier']}} dest=result.txt
+  local_action: copy content={{(jsonContent.json.metadata | from_json)['ucloudIdentifier']}} dest=results/result.txt
