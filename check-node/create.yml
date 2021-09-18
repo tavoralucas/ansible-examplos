@@ -22,12 +22,12 @@
 #        - create.js
 #        - result.txt
 
-    - name: Install package xhr2
-      npm:
-        name: xhr2
-        state: latest
-        global: yes
-        path: files
+#    - name: Install package xhr2
+#      npm:
+#        name: xhr2
+#        state: latest
+#        global: yes
+#        path: files
 =======
 #     - name: Copy script to destination
 #       ansible.builtin.copy:
