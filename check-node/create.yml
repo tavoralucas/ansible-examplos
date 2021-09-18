@@ -3,9 +3,9 @@
   become: true
 
   tasks:
-    - name: Install node
-      shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
-            sudo yum install nodejs -y
+#    - name: Install node
+#      shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+#            sudo yum install nodejs -y
       args:
         creates: /usr/bin/npm
 
