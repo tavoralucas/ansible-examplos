@@ -6,8 +6,8 @@
 #    - name: Install node
 #      shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 #            sudo yum install nodejs -y
-      args:
-        creates: /usr/bin/npm
+#      args:
+#        creates: /usr/bin/npm
 
 #     - name: Copy script to destination
 #       ansible.builtin.copy:
