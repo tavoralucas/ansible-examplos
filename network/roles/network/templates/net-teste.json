@@ -1,5 +1,6 @@
 {
   "vm": {
+    "container": {"type":"vmware", "ucloudIdentifier":"46d3a033-98bb-43ca-90ed-2f963507e0d0"},
     "ucloudIdentifier": "166d2d14-0929-41ee-bf2e-82cb683ae182"
   },
   "subnet": {
