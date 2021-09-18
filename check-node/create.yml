@@ -10,17 +10,17 @@
       args:
         creates: /usr/bin/npm
 
-    - name: Copy script to destination
-      ansible.builtin.copy:
-        src: "files/{{ item }}"
-        dest: "/tmp/{{ item }}"
-        mode: '0644'
-      loop:
-        - package.json
-        - package-lock.json
-        #- script-umock.js
-        - create.js
-        - result.txt
+#     - name: Copy script to destination
+#       ansible.builtin.copy:
+#         src: "files/{{ item }}"
+#         dest: "/tmp/{{ item }}"
+#         mode: '0644'
+#       loop:
+#         - package.json
+#         - package-lock.json
+#         #- script-umock.js
+#         - create.js
+#         - result.txt
         
 #     - name: install
 #       command: npm install -g xhr2
