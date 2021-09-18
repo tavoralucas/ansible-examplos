@@ -1,0 +1,18 @@
+- name: Send Notification  
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+  - name: Sending an email
+    community.general.mail:
+      host: umail.usto.re
+      port: 587
+      username: noreply@ucloud.usto.re
+      password: BHU*nji9
+      to: 
+      - gustavo@usto.re
+      - assad@usto.re
+      - gabrielps@usto.re
+      subject: Ansible-report
+      body: System clone-vmware-demo has been successfully provisioned.
