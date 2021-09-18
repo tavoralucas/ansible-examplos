@@ -3,13 +3,13 @@
   become: true
 
   tasks:
-    - name: Install node
-      shell: |
-            curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
-            sudo yum install nodejs -y
-      args:
-        creates: /usr/bin/npm
+#    - name: Install node
+#      shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+#            sudo yum install nodejs -y
+#      args:
+#        creates: /usr/bin/npm
 
+<<<<<<< HEAD
 #    - name: Copy script to destination
 #      ansible.builtin.copy:
 #        src: "files/{{ item }}"
@@ -28,6 +28,28 @@
         state: latest
         global: yes
         path: files
+=======
+#     - name: Copy script to destination
+#       ansible.builtin.copy:
+#         src: "files/{{ item }}"
+#         dest: "/tmp/{{ item }}"
+#         mode: '0644'
+#       loop:
+#         - package.json
+#         - package-lock.json
+#         #- script-umock.js
+#         - create.js
+#         - result.txt
+        
+#     - name: install
+#       command: npm install -g xhr2
+#     - name: Install package xhr2
+#       community.general.npm:
+#         name: xhr2
+#         state: latest
+#         global: no
+#         path: files
+>>>>>>> 6d19f98d329b526c356730d156711be6fbae3f16
 
     - name: Executando script-js
       command: node files/create.js
