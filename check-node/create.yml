@@ -21,13 +21,15 @@
         #- script-umock.js
         - create.js
         - result.txt
-
-    - name: Install package xhr2
-      community.general.npm:
-        name: xhr2
-        state: latest
-        global: no
-        path: files
+        
+      - name: install
+        command: npm install -g xhr2
+#     - name: Install package xhr2
+#       community.general.npm:
+#         name: xhr2
+#         state: latest
+#         global: no
+#         path: files
 
     - name: Executando script-js
       command: node files/create.js
