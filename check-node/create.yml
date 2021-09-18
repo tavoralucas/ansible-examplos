@@ -9,7 +9,7 @@
 #      args:
 #        creates: /usr/bin/npm
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 #    - name: Copy script to destination
 #      ansible.builtin.copy:
 #        src: "files/{{ item }}"
@@ -28,7 +28,7 @@
 #        state: latest
 #        global: yes
 #        path: files
-=======
+#=======
 #     - name: Copy script to destination
 #       ansible.builtin.copy:
 #         src: "files/{{ item }}"
@@ -49,7 +49,7 @@
 #         state: latest
 #         global: no
 #         path: files
->>>>>>> 6d19f98d329b526c356730d156711be6fbae3f16
+#>>>>>>> 6d19f98d329b526c356730d156711be6fbae3f16
 
     - name: Executando script-js
       command: node files/create.js
