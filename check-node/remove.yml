@@ -62,7 +62,7 @@
          msg: " O retorno deu status '{{ item_status }}'. {{ output.stdout }}"
       when: item_status != '200' and item_status != '201'
       
-     local_action: copy content={{ output.stdout }} dest=results/result.txt
+    - local_action: copy content={{ output.stdout }} dest=results/result.txt
 
     - name: Print result
       ansible.builtin.debug:
