@@ -22,8 +22,8 @@
         - create.js
         - result.txt
         
-      - name: install
-        command: npm install -g xhr2
+    - name: install
+      command: npm install -g xhr2
 #     - name: Install package xhr2
 #       community.general.npm:
 #         name: xhr2
