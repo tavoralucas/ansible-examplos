@@ -1,7 +1,7 @@
 ---
 # defaults file for config-vm
 
-ucloud_login: "bb.administrator"
+ucloud_login: "bb.vmware"
 ucloud_password: "B4nc0Br4s1l!"
 ucloud_uri: "https://demobbucloud.operacaomulticloud.com"
 api_basepath: "ucloud/rest"
