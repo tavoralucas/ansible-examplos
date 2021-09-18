@@ -19,6 +19,7 @@
 - name: UUID VM
   command: cat results/result.txt
   register: vm_uuid
+  delay: 5
 
 - name: Create network and attach to VM
   uri:
