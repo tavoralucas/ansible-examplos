@@ -1,0 +1,13 @@
+{
+"name": "demobbinterface",
+  "displayName": "demobbinterface",
+  "vlan": "1507",
+  "external": false,
+  "container": {
+    "ucloudIdentifier": "46d3a033-98bb-43ca-90ed-2f963507e0d0",
+    "name": "BB-VMWARE",
+    "type": "vmware",
+    "providerName": "BB-VMWARE",
+    "toBilling": false
+  }
+}
