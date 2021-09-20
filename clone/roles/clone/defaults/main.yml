@@ -6,6 +6,8 @@ ucloud_password: "B4nc0Br4s1l!"
 ucloud_uri: "https://demobbucloud.operacaomulticloud.com"
 api_basepath: "ucloud/rest"
 
+vm_clone_name: "nome_ucloud"
+
 vm_ucloud_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
 #vm_to_clone_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
 vm_name: "testewmware"
