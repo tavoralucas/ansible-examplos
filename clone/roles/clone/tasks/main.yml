@@ -13,11 +13,6 @@
     return_content: true
   register: token
 
-# - name: Name Vm
-#   replace:
-#     path: 'roles/clone/templates/clone.json'
-#     regexp: "vm_clone_name"
-#     replace: "{{ vm_clone_name }}"
 
 
 - name: Create clone VM
