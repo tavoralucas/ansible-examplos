@@ -10,7 +10,7 @@ vm_clone_name: "nome_ucloud"
 
 vm_ucloud_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
 #vm_to_clone_identifier: "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9"
-#vm_name: "testewmware"
+vm_name: "testewmware"
 vm_disk_ucloud_identifier: "d88c3022-8f02-419a-acf9-847878a11c29"
 task_uuid: "e5b2bbc5-a3b7-49c1-aff4-c9f5074f7fc2"
 #new_clone_task_identifier: "e5b2bbc5-a3b7-49c1-aff4-c9f5074f7fc2"
