@@ -1,5 +1,5 @@
 {
-  "name": "{{ suffix }}-disk",
+  "name": "{{ disk_name }}",
   "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
   "virtualSize": "{{ disk_size }}",
   "storage": {
