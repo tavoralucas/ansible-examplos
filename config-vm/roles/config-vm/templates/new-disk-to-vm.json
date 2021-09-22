@@ -1,5 +1,5 @@
 {
-  "name": "{{ disk_name }}",
+  "name": "disknovavm",
   "ucloudIdentifier": "a2ebc349-e0a8-430d-b130-e22fbdba1fee",
   "virtualSize": 2,
   "storage": {
