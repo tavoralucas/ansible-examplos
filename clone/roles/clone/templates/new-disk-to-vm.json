@@ -1,7 +1,7 @@
 {
   "name": "{{ suffix }}-disk",
   "ucloudIdentifier": "4fb32c69-1eac-47f9-8ab0-8a7c2c12b3b9",
-  "virtualSize": 2,
+  "virtualSize": "{{ disk_size }}",
   "storage": {
     "ucloudIdentifier": "d88c3022-8f02-419a-acf9-847878a11c29",
     "hyperIdentifier": "datastore-39",
