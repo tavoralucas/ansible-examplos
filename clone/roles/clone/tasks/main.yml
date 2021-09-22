@@ -45,8 +45,8 @@
       accept: "application/json"
   register: jsonContent
   until: " (jsonContent.content | from_json) ['status'] == 200"
-  retries: 30
-  delay: 8
+  retries: 50
+  delay: 10
 
 - name: save
   local_action: copy content={{(jsonContent.json.metadata | from_json)['ucloudIdentifier']}} dest=results/result.txt
