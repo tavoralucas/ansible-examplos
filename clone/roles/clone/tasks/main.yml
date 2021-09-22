@@ -44,7 +44,7 @@
       token: "{{ token.content }}"
       accept: "application/json"
   register: jsonContent
-  until: " (jsonContent.content | from_json) ['status'] == 200"
+  until: "(jsonContent.content | from_json) ['status'] == 200"
   retries: 30
   delay: 5
 
