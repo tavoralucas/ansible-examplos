@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local  
+  tasks:
+  - name: 'Executando PowerShell'
+    shell: pwsh hello.ps1
+    register: hello
+
+  - name: Print hello
+    ansible.builtin.debug:
+      var: hello.stdout_lines
+       
+
+
