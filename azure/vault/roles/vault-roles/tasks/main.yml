@@ -1,6 +1,7 @@
   - name: Create/Update Azure Recovery Service vault
     azure_rm_recoveryservicesvault:
       resource_group: 'azurebkp'
-      name: 'valutbkp'
+      name: '{{ item }}'
+      loop: "{{ vault_name  }}"
       location: 'brazilsouth'
       state: 'present'
