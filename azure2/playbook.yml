@@ -8,9 +8,16 @@
   tasks:
   - set_fact:
       suffix: "{{ random_name  }}"
+  - name: "Create a resource group"
+    azure_rm_resourcegroup:
+      name: 'pmc-rg-{{ suffix }}'
+      location: brazilsouth
+      tags:
+        testing: pmc-bkp
+        delete: never
   - name: "Create/Update Azure Recovery Service vault"
     azure_rm_recoveryservicesvault:
-      resource_group: 'azurebkp'
-      name: 'vault-{{ suffix }}'
+      resource_group: "pmc-rg-{{ suffix }}"
+      name: "pmc-vault-{{ suffix }}"
       location: 'brazilsouth'
       state: 'present'
