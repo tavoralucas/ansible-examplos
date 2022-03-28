@@ -2,13 +2,15 @@
   hosts: localhost
   vars:
      ansible_python_interpreter: /usr/bin/python3
+     random_name: "{{ lookup('password', '/dev/null length=6 chars=ascii_letters') }}"
   collections:
      - azure.azcollection
   tasks:
+  - set_fact:
+      suffix: "{{ random_name  }}"
   - name: "Create/Update Azure Recovery Service vault"
     azure_rm_recoveryservicesvault:
-    resource_group: 'azurebkp'
-    name: 'vaultteste01'
-    location: 'brazilsouth'
-    state: 'present'
-
+      resource_group: 'azurebkp'
+      name: 'vault-{{ suffix }}'
+      location: 'brazilsouth'
+      state: 'present'
