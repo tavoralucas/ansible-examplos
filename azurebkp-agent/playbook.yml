@@ -1,0 +1,5 @@
+- hosts: win
+#  connection: local
+  tasks:
+  - name: 'Executando PowerShell'
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Users\ustore\Desktop\TEMPLATES\azurebkp.ps1
