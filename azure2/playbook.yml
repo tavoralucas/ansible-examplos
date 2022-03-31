@@ -4,10 +4,11 @@
      ansible_python_interpreter: /usr/bin/python3
      random_name: "{{ lookup('password', '/dev/null length=6 chars=ascii_letters') }}"
   collections:
-     - azure.azcollection
+    - azure.azcollection
   tasks:
   - set_fact:
       suffix: "{{ random_name  }}"
+  
   - name: "Create a resource group"
     azure_rm_resourcegroup:
       name: "pmc-rg-{{ suffix }}"
@@ -22,14 +23,6 @@
       name: "pmc-vault-{{ suffix }}"
       location: 'brazilsouth'
       state: 'present'
-
-  - name: "dev locale"
-    action: command sudo update-locale LANG=pt_BR.utf-8
-  - name: set default locale
-    sudo: yes
-    lineinfile: dest=/etc/locale.conf
-      regexp="LANG"
-      line="LANG=\"pt_BR.utf-8\""
 
   - name: "Generate date"
     ansible.builtin.shell: |
@@ -49,5 +42,3 @@
   - name: 'Debug win stdout'
     ansible.builtin.debug:
       var: win_stdout
- 
-
