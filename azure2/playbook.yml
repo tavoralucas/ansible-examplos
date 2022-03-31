@@ -23,6 +23,14 @@
       location: 'brazilsouth'
       state: 'present'
 
+  - name: "dev locale"
+    action: command sudo update-locale LANG=pt_BR.utf-8
+  - name: set default locale
+    sudo: yes
+    lineinfile: dest=/etc/locale.conf
+      regexp="LANG"
+      line="LANG=\"pt_BR.utf-8\""
+
   - name: "Generate date"
     ansible.builtin.shell: |
       echo "`date '+%a'` `date '+%b'` `date '+%d'` `date '+%Y'`" | tr 'A-Z' 'a-z'
