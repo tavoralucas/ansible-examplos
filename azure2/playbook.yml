@@ -1,5 +1,5 @@
 - name: "Playing with Ansible and Git"
-  hosts: localhost
+  hosts: local
   vars:
      ansible_python_interpreter: /usr/bin/python3
      random_name: "{{ lookup('password', '/dev/null length=6 chars=ascii_letters') }}"
@@ -10,14 +10,36 @@
       suffix: "{{ random_name  }}"
   - name: "Create a resource group"
     azure_rm_resourcegroup:
-      name: 'pmc-rg-{{ suffix }}'
+      name: "pmc-rg-{{ suffix }}"
       location: brazilsouth
       tags:
         testing: pmc-bkp
         delete: never
+
   - name: "Create/Update Azure Recovery Service vault"
     azure_rm_recoveryservicesvault:
       resource_group: "pmc-rg-{{ suffix }}"
       name: "pmc-vault-{{ suffix }}"
       location: 'brazilsouth'
       state: 'present'
+
+  - name: "Generate date"
+    ansible.builtin.shell: |
+      echo "`date '+%a'` `date '+%b'` `date '+%d'` `date '+%Y'`" | tr 'A-Z' 'a-z'
+    register: generate_date
+
+  - name: Debug download name
+    ansible.builtin.debug:
+      msg: 
+        - "{{ generate_date.stdout_lines[0] }}"
+
+  - name: 'Executing PowerShell'
+    win_command: powershell.exe -ExecutionPolicy ByPass -File C:\Users\ustore\Desktop\TEMPLATES\azurebkp.ps1 "{{ suffix }}" "{{ generate_date.stdout_lines[0] }}"
+    delegate_to: 10.0.50.90
+    register: win_stdout
+
+  - name: 'Debug win stdout'
+    ansible.builtin.debug:
+      var: win_stdout
+ 
+
