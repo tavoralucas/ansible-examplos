@@ -1,0 +1,18 @@
+- name: Sending a HTML email
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Sending e-mail
+      mail:
+        host: umail.usto.re
+        port: 587
+        username: noreply@ucloud.usto.re
+        password: BHU*nji9
+        from: noreply@ucloud.usto.re (Nao responda esse email)
+        to: {{NOME}} <{{EMAIL}}>
+        subject: Nova compra realizada - {{PRODUCT_NAME}}
+        subtype: html
+        charset: utf8
+        body: 'Prezado {{NAME}}, o Sr comprou o {{PRODUCT_NAME}} que custa {{PRICE_VALUE}} Atenciosamente, Equipe CLARO'
