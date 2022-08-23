@@ -11,8 +11,6 @@
       username: noreply@ucloud.usto.re
       password: BHU*nji9
       to: 
-      - gustavo@usto.re
-      - assad@usto.re
-      - gabrielps@usto.re
-      subject: Ansible-report
-      body: System clone-vmware-demo has been successfully provisioned.
+      - lucas.tavora@usto.re
+      subject: Nova compra realizada - {{PRODUCT_NAME}}
+      body: Prezado {{NAME}}, o Sr comprou o {{PRODUCT_NAME}} que custa {{PRICE_VALUE}} Atenciosamente, Equipe CLARO
